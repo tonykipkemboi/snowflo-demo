@@ -44,6 +44,12 @@ def create_chart(stock_data, sp_data, stock):
 
 
 def main():
+    st.set_page_config(
+        page_title="Stock Backtesting App",
+        page_icon="📈",
+        layout="wide",
+        initial_sidebar_state="expanded"
+    )
     with st.sidebar:
         with st.form('my_form'):
             # Retrieve the stock data
@@ -120,7 +126,8 @@ def main():
             # Code for the app
             st.header('Code used to create this app')
             st.info('Complete code in GitHub')
-            code = '''import pandas_datareader as pdr
+            code = """
+            import pandas_datareader as pdr
             import plotly.graph_objects as go
             import streamlit as st
             import datetime as dt
@@ -243,7 +250,7 @@ def main():
             if __name__ == '__main__':
                 main()
 
-            '''
+            """
             st.code(code, language='python')
 
         with tab3:
